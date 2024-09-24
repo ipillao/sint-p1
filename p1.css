@@ -1,0 +1,29 @@
+body{
+    background-color: lightgreen;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header{
+    margin: 10px;
+}
+
+main{
+    padding-bottom: 100px;
+    margin:10px;
+}
+
+form{
+    background-color:lightgrey;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 100px;
+    padding: 10px 10px 0 10px;
+}
