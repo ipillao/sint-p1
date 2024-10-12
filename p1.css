@@ -16,14 +16,64 @@ main{
 
 form{
     background-color:lightgrey;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+form > h2{
+    margin-top: 10px;
+}
+
+input{
+    border-color: grey;
+    border-radius: 5px;
+    height: 20px;
+}
+
+input:focus{
+    border-color: greenyellow;
+
+}
+
+#b_enviar{
+    background-color: #04AA6D;
+    border-radius: 7px;
+    color: white;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#b_enviar:hover{
+    background-color: rgb(4, 131, 84);
+    cursor: pointer;
+}
+
+.bloque{
+    display: block;
+    margin-bottom: 3px;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: black;
     color: white;
     height: 100px;
-    padding: 10px 10px 0 10px;
+    /*padding: 10px 10px 0 10px;*/
+}
+
+footer > p::first-letter{
+    font-size: 40px;
 }

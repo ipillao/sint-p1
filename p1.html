@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <title>Formulario</title>
         <link  rel="stylesheet" href="p1.css" type="text/css">
+        <script type="text/javascript" src="p1.js"></script>
     </head>
 
     <body>
@@ -12,59 +13,108 @@
             <h1>Formulario</h1>
         </header>
         <main>
-            <form action="">
+            <form action="https://luis.sabucedo.webs.uvigo.es/p1/result1.php" method="" enctype="">
                 <h2>Formulario de alta</h2>
+                
                 <p>Complete el formulario para darse de alta en nuestro servicio:</p>
+                
+                <label class="bloque" for="f_nombre">Nombre completo:</label>
+                <input class="bloque" type="text" name="cname" id="f_nombre" pattern="">
 
-                <label for="f_nombre">Nombre completo:</label>
-                <input type="text" name="cname" id="f_nombre" pattern="">
+                <label class="bloque" for="f_login">Nombre de usuario:</label>
+                <input class="bloque" type="text" name="clogin" id="f_login">
 
-                <label for="f_login">Nombre de usuario</label>
-                <input type="text" name="clogin" id="f_login">
+                <label class="bloque" for="f_contraseña">Contraseña:</label>
+                <input class="bloque" type="password" name="cpasswd" id="f_contraseña">
 
-                <label for="f_contraseña">Contraseña:</label>
-                <input type="password" name="cpasswd" id="f_contraseña">
+                <label class="bloque" for="f_dni">DNI:</label>
+                <input class="bloque" type="text" name="cdni" id="f_dni">
 
-                <label for="f_dni">DNI:</label>
-                <input type="text" name="cdni" id="f_dni">
-
-                <label for="f_email">Email:</label>
-                <input type="email" name="cemail" id="f_email">
-
+                <label class="bloque" for="f_email">Email:</label>
+                <input class="bloque" type="email" name="cemail" id="f_email">
+            
                 <p>Indique la sección de edad a la que pertenece:</p>
-                <input type="radio" name="cage" id="f_menor5" value="menor5">
-                <label for="f_menor5">Menor de 5 años</label>
-                <input type="radio" name="cage" id="f_entre5_15" value="entre5_15">
-                <label for="f_entre5_15">Entre 5 y 15 años</label>
-                <input type="radio" name="cage" id="f_entre16_18" value="entre16_18">
-                <label for="f_entre16_18">Entre 16 y 18 años</label>
-                <input type="radio" name="cage" id="f_mayor18" value="mayor18">
-                <label for="f_mayor18">Mayor de 18 años</label>
+                <div class="flex-col">
+                    <span>
+                        <input type="radio" name="cage" id="f_menor5" value="menor5">
+                        <label for="f_menor5">Menor de 5 años</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="cage" id="f_entre5_15" value="entre5_15">
+                        <label for="f_entre5_15">Entre 5 y 15 años</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="cage" id="f_entre16_18" value="entre16_18">
+                        <label for="f_entre16_18">Entre 16 y 18 años</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="cage" id="f_mayor18" value="mayor18">
+                        <label for="f_mayor18">Mayor de 18 años</label>
+                    </span>
+                </div>
+
 
                 <p>Seleccione los géneros que le susciten interés:</p>
-                <input type="checkbox" name="cgenre" value="historica" id="f_historica">
-                <label for="f_historica">Histórica</label>
-                <input type="checkbox" name="cgenre" value="documental" id="f_documental">
-                <label for="f_documental">Documental</label>
-                <input type="checkbox" name="cgenre" value="aventuras" id="f_aventuras">
-                <label for="cgenre">Aventuras</label>
-                <input type="checkbox" name="cgenre" value="ciencia_ficcion" id="f_ciencia_ficcion">
-                <label for="f_ciencia_ficcion">Ciencia Ficción</label>
-                <input type="checkbox" name="cgenre" value="animacion" id="f_animacion">
-                <label for="f_animacion">Animación</label>
-                <input type="checkbox" name="cgenre" value="marcar_todas" id="f_marcar_todas">
-                <label for="f_marcar_todas">Marcar todas</label>
-                <input type="checkbox" name="cgenre" value="desmarcar_todas" id="f_desmarcar_todas">
-                <label for="f_desmarcar_todas">Desmarcar todas</label>
+                <div class="flex-col">
+                    <span>
+                        <input type="checkbox" name="cgenre" value="historica" id="f_historica">
+                        <label for="f_historica">Histórica</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="cgenre" value="documental" id="f_documental">
+                        <label for="f_documental">Documental</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="cgenre" value="aventuras" id="f_aventuras">
+                        <label for="f_aventuras">Aventuras</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="cgenre" value="ciencia_ficcion" id="f_ciencia_ficcion">
+                        <label for="f_ciencia_ficcion">Ciencia Ficción</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="cgenre" value="animacion" id="f_animacion">
+                        <label for="f_animacion">Animación</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="cgenre" value="marcar_todas" id="f_marcar_todas">
+                        <label for="f_marcar_todas">Marcar todas</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="cgenre" value="desmarcar_todas" id="f_desmarcar_todas">
+                        <label for="f_desmarcar_todas">Desmarcar todas</label>
+                    </span>
+                    </div>
+
+                    <p>Selecciones el método de envío de los datos</p>
+                    <div>
+                        <input type="radio" name="cmethod" id="f_get" value="get">
+                        <label for="f_get">GET</label>
+                        <input type="radio" name="cmethod" id="f_post" value="post">
+                        <label for="f_post">POST</label>
+                    </div>
+
+                    <p>Seleccione el tipo de codificación</p>
+                    <div>
+                        <span>
+                            <input type="radio" name="cencoding" id="f_urlencode" value="urlenconde">
+                            <label for="f_urlencode">application/x-www-form-urlencoded</label>
+                        </span>
+                        <span>
+                            <input type="radio" name="cencoding" id="f_multipart" value="multipart">
+                            <label for="f_multipart">multipart/form-data</label>
+                        </span>
+
+                    </div>
 
                 <input type="hidden">
                 
-                <input type="submit" value="Enviar">
+                <input id="b_enviar" type="submit" value="Enviar">
                 
             </form>
         </main>
         <footer>
-            Ivan
+            <p>Iván</p>
         </footer>
     </body>
 </html>
