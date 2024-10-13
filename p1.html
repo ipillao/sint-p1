@@ -13,13 +13,13 @@
             <h1>Formulario</h1>
         </header>
         <main>
-            <form action="https://luis.sabucedo.webs.uvigo.es/p1/result1.php" method="" enctype="">
+            <form action="https://luis.sabucedo.webs.uvigo.es/p1/result1.php" method="" enctype="" onsubmit="enviarFormulario()">
                 <h2>Formulario de alta</h2>
                 
                 <p>Complete el formulario para darse de alta en nuestro servicio:</p>
                 
                 <label class="bloque" for="f_nombre">Nombre completo:</label>
-                <input class="bloque" type="text" name="cname" id="f_nombre" pattern="">
+                <input class="bloque" type="text" name="cname" id="f_nombre" pattern="[a-zA-ZáéíóúñÑ]{3,} [a-zA-záéíóúñÑ]{3,}" title="Se necesitan 2 palabras, compuestas por al menos 3 letras cada una">
 
                 <label class="bloque" for="f_login">Nombre de usuario:</label>
                 <input class="bloque" type="text" name="clogin" id="f_login">
@@ -107,7 +107,7 @@
 
                     </div>
 
-                <input type="hidden">
+                <input type="hidden" id="cinfo">
                 
                 <input id="b_enviar" type="submit" value="Enviar">
                 
