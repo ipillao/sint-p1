@@ -1,17 +1,25 @@
-//const botonSubmit = document.getElementById("b_enviar");
 
 function enviarFormulario(){
     const infoNavegador = obtenerInfoNavegador();
     document.getElementById("cinfo").value = infoNavegador;
-    comprobar();
+    if(comprobar()==false) return false;
+
+    return true; //Se envía
 
 }
 
 function comprobar(){
-    const listaInputsText = document.querySelectorAll("input[type='text']");
+    const inputsLogin = document.getElementById("f_login");
     const inputsPassword = document.getElementById("f_password");
     const inputEmail = document.getElementById("f_email");
     console.log(listaInputs);
+
+    if(check_login() == false) return false;
+    if(check_password() == false) return false;
+    if(check_email() == false) return false;
+    if(check_dni() == false) return false;
+
+    return true;
     
 }
 
