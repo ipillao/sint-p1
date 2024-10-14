@@ -1,4 +1,23 @@
 
+
+document.getElementById("f_marcar_todas").addEventListener("change", function(){
+    if(this.checked){
+        marcarTodas();
+    }
+} );
+
+
+document.getElementById("f_desmarcar_todas").addEventListener("change", function(){
+    if(this.checked){
+        desmarcarTodas();
+    }
+})
+
+
+
+
+//---------------------------------------------
+
 function enviarFormulario(){
     const infoNavegador = obtenerInfoNavegador();
     document.getElementById("cinfo").value = infoNavegador;
@@ -62,4 +81,30 @@ function check_login(login){
 
 function obtenerInfoNavegador(){
     return navigator.userAgent;
+}
+
+//-----------------
+
+function marcarTodas(){
+    let boxMarcarTodos = document.getElementById("f_marcar_todas");
+    if(boxMarcarTodos.checked == true){
+        let checkTodos = Array.from(document.querySelectorAll("input[type='checkbox']"));
+        checkTodos = checkTodos.filter(cb => cb.id != 'f_marcar_todas' && cb.id != 'f_desmarcar_todas');
+        
+        checkTodos.forEach(cb => cb.checked = true);
+        boxMarcarTodos.check = false;
+
+        return;
+    }
+}
+
+function desmarcarTodas(){
+    let boxDesmarcarTodos = document.getElementById("f_desmarcar_todas");
+    let checkTodos = Array.from(document.querySelectorAll("input[type='checkbox']"));
+    checkTodos = checkTodos.filter(cb => cb.id != 'f_marcar_todas' && cb.id != 'f_desmarcar_todas');
+
+    checkTodos.forEach(cb => cb.checked = false);
+    boxDesmarcarTodos.checked = false;
+    
+    return;
 }
