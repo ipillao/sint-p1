@@ -24,7 +24,7 @@ document.getElementById('formulario').addEventListener("submit", function(event)
 
     if(enviarFormulario() == false) return false;
 
-    this.onsubmit();
+    this.onsubmit();    //Envía el formulario
     return;
 })
 
@@ -33,6 +33,31 @@ function enviarFormulario(){
     const infoNavegador = obtenerInfoNavegador();
     document.getElementById("cinfo").value = infoNavegador;
     if(comprobar()==false) return false;
+
+
+    const form = document.getElementById("formulario");
+
+    const fMethodGet = document.getElementById("f_get");
+    const fMethodPost = document.getElementById("f_post");
+
+    if(fMethodGet.checked == true){
+        form.setAttribute('method', 'GET');
+    }
+
+    if(fMethodPost.checked == true){
+        form.setAttribute('method', 'POST');
+    }
+
+    const fEncodeUrl = document.getElementById("f_urlencode");
+    const fEncodeMultipart = document.getElementById("f_multipart");
+
+    if(fEncodeUrl.checked == true){
+        form.setAttribute('enctype', 'application/x-www-form-urlencoded');
+    }
+    if(fEncodeMultipart.checked == true){
+        form.setAttribute('enctype', 'multipart/form-data');
+    }
+
 
     return true; //Se envía
 
