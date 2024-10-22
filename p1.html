@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <title>Formulario</title>
         <link  rel="stylesheet" href="p1.css" type="text/css">
-        <script type="text/javascript" src="p1.js"></script>
     </head>
 
     <body>
@@ -13,7 +12,7 @@
             <h1>Formulario</h1>
         </header>
         <main>
-            <form action="https://luis.sabucedo.webs.uvigo.es/p1/result1.php" method="" enctype="" onsubmit="enviarFormulario()">
+            <form action="https://luis.sabucedo.webs.uvigo.es/p1/result1.php" method="GET" enctype="application/x-www-form-urlencoded" id="formulario">
                 <h2>Formulario de alta</h2>
                 
                 <p>Complete el formulario para darse de alta en nuestro servicio:</p>
@@ -25,7 +24,7 @@
                 <input class="bloque" type="text" name="clogin" id="f_login">
 
                 <label class="bloque" for="f_contraseña">Contraseña:</label>
-                <input class="bloque" type="password" name="cpasswd" id="f_contraseña">
+                <input class="bloque" type="password" name="cpasswd" id="f_password">
 
                 <label class="bloque" for="f_dni">DNI:</label>
                 <input class="bloque" type="text" name="cdni" id="f_dni">
@@ -117,4 +116,6 @@
             <p>Iván</p>
         </footer>
     </body>
+
+    <script type="text/javascript" src="p1.js"></script>
 </html>

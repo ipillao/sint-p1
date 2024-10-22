@@ -1,6 +1,7 @@
 
 
-document.getElementById("f_marcar_todas").addEventListener("change", function(){
+const box_marcarTodas = document.getElementById('f_marcar_todas');
+box_marcarTodas.addEventListener("change", function(){
     if(this.checked){
         marcarTodas();
     }
@@ -16,7 +17,17 @@ document.getElementById("f_desmarcar_todas").addEventListener("change", function
 
 
 
-//---------------------------------------------
+//-----------COMPROBAR Y ENVIAR FORMULARIO----------------------------------
+
+document.getElementById('formulario').addEventListener("submit", function(event){
+    event.preventDefault(); //Evita que se envie el formulario
+
+    if(enviarFormulario() == false) return false;
+
+    this.onsubmit();
+    return;
+})
+
 
 function enviarFormulario(){
     const infoNavegador = obtenerInfoNavegador();
@@ -31,12 +42,16 @@ function comprobar(){
     const inputsLogin = document.getElementById("f_login");
     const inputsPassword = document.getElementById("f_password");
     const inputEmail = document.getElementById("f_email");
-    console.log(listaInputs);
+    const inputDni = document.getElementById("f_dni")
 
-    if(check_login() == false) return false;
-    if(check_password() == false) return false;
-    if(check_email() == false) return false;
-    if(check_dni() == false) return false;
+    console.log("ejecuta comprobar...")
+
+    if(check_login(inputsLogin.value) == false) return false;
+    console.log("ha pasado login")
+    if(check_password(inputsPassword.value) == false) return false;
+    console.log("ha pasado password");
+    if(check_email(inputEmail.value) == false) return false;
+    if(check_dni(inputDni.value) == false) return false;
 
     return true;
     
@@ -72,6 +87,7 @@ function check_password(password){
 
 function check_login(login){
     let length = login.length;
+    console.log(length);
     if(length < 4 || length > 8){
         alert("El login debe tener entre 4 y 8 caracteres");
         return false;
@@ -83,7 +99,7 @@ function obtenerInfoNavegador(){
     return navigator.userAgent;
 }
 
-//-----------------
+//--------CONTROL INTERNO DEL FORMULARIO---------
 
 function marcarTodas(){
     let boxMarcarTodos = document.getElementById("f_marcar_todas");
@@ -92,7 +108,7 @@ function marcarTodas(){
         checkTodos = checkTodos.filter(cb => cb.id != 'f_marcar_todas' && cb.id != 'f_desmarcar_todas');
         
         checkTodos.forEach(cb => cb.checked = true);
-        boxMarcarTodos.check = false;
+        boxMarcarTodos.checked = false;
 
         return;
     }
